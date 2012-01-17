@@ -1,0 +1,12 @@
+[user]
+	name = Scott Muc
+	email = scottmuc@gmail.com
+[core]
+	excludesfile = /Users/smuc/.gitignore
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[alias]
+    oldlog = log
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
