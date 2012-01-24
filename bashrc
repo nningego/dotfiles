@@ -19,13 +19,13 @@ WHITE="\[\e[1;37m\]"
 RESET_COLOR="\[\e[0m\]"
 
 if [[ -n "$PS1" ]]; then
-    export PS1="$BLUE\\u$WHITE in $DGRAY\\w\\n${GREEN}λ ${RESET_COLOR}"
-    export SUDO_PS1="$BLUE\\u$WHITE in $DGRAY\\w\\n${RED}λ ${RESET_COLOR}"
+  export PS1="$BLUE\\u$WHITE in $DGRAY\\w\\n${GREEN}λ ${RESET_COLOR}"
+  export SUDO_PS1="$BLUE\\u$WHITE in $DGRAY\\w\\n${RED}λ ${RESET_COLOR}"
 fi
 
 alias ls='ls -G'
 alias ll='ls -alh'
-
-export EDITOR="mvim -f"
+alias ..='cd ..'
+alias cdp='cd ~/dev/myd'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
