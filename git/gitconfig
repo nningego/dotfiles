@@ -2,7 +2,7 @@
   name = Scott Muc
   email = scottmuc@gmail.com
 [core]
-  excludesfile = /Users/smuc/.gitignore
+  excludesfile = ~/.gitignore
 [color]
   diff = auto
   status = auto
