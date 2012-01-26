@@ -3,10 +3,9 @@
   email = scottmuc@gmail.com
 [core]
   excludesfile = ~/.gitignore
+  editor = vim
 [color]
-  diff = auto
-  status = auto
-  branch = auto
+  ui = true
 [alias]
   co = checkout
   oldlog = log
