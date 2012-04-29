@@ -7,7 +7,7 @@
 [color]
   ui = auto
 [alias]
-  s = status
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+  l  = "!source ~/.githelpers && pretty_git_log"
   co = checkout
   aa = add --all

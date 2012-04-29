@@ -31,6 +31,8 @@ alias ll='ls -alh'
 alias ..='cd ..'
 alias ppjson='pbpaste | python -mjson.tool | pbcopy'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias iwc='cd ~/code' # short for I wanna code
+alias be='bundle exec'
 
 # project specific aliases
 alias mr='rvm use 1.9.2@taptap'
