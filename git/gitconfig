@@ -7,7 +7,10 @@
 [color]
   ui = auto
 [alias]
+  s  = status
   st = status
   l  = "!source ~/.githelpers && pretty_git_log"
+  ci = commit
   co = checkout
   aa = add --all
+  pullff = pull --ff-only
