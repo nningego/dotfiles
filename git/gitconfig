@@ -7,10 +7,14 @@
 [color]
   ui = auto
 [alias]
-  s  = status
+  # svn compatible aliases
   st = status
-  l  = "!source ~/.githelpers && pretty_git_log"
   ci = commit
   co = checkout
+
+  # custom log that is a copy of Gary Bernhardt's
+  l  = "!source ~/.githelpers && pretty_git_log"
+
+  # if I'm not adding 1 file at a time, then I want my stage to
+  # look like my workspace.
   aa = add --all
-  pullff = pull --ff-only
