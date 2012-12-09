@@ -2,9 +2,6 @@ set -o vi
 
 alias ls='ls -G'
 alias ll='ls -alh'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias be='bundle exec'
-alias twu='cd ~/Dropbox/Projects/twu'
 
 INTELLIJ="/Applications/IntelliJ\ IDEA\ 11\ CE.app/Contents/MacOS/idea"
 alias intellij="${INTELLIJ} &"
@@ -12,12 +9,13 @@ alias op="${INTELLIJ} \`pwd\` &"
 
 export EDITOR="vim -f"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 
 if [ -f ~/.git-completion.sh ]; then
     source ~/.git-completion.sh
 fi
 
-function setup_prompt() {
+function _setup_prompt() {
   BLACK="\[\e[0;30m\]"
   DGRAY="\[\e[1;30m\]"
   BLUE="\[\e[0;34m\]"
@@ -42,26 +40,6 @@ function setup_prompt() {
   fi
 }
 
-function watch()
-{
-    local delay=2
-    local lines=$(tput lines)
-    lines=$((${lines:-25} - 1))
-
-    if [[ "$1" -eq "-n" ]]; then
-        shift
-        delay=$((${1:-2}))
-        shift
-    fi
-
-    while true
-    do
-            clear
-        "$@" | head -n $lines
-        sleep $delay
-    done
-}
-
 function enable_rvm() {
   RVM=`which rvm`
   if [ "$RVM" = "" ]; then
@@ -70,5 +48,5 @@ function enable_rvm() {
   fi
 }
 
-setup_prompt
+_setup_prompt
 
