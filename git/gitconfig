@@ -18,3 +18,5 @@
   # if I'm not adding 1 file at a time, then I want my stage to
   # look like my workspace.
   aa = add --all
+[credential]
+	helper = osxkeychain
