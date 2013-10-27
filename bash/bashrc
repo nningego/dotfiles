@@ -1,4 +1,4 @@
-###set -o vi
+set -o vi
 alias ls='ls -G' 
 alias ll='ls -alh'
 INTELLIJ="/Applications/IntelliJ\ IDEA\ 12\ CE.app/Contents/MacOS/idea"
@@ -6,6 +6,9 @@ alias intellij="${INTELLIJ} &"
 alias op="${INTELLIJ} \`pwd\` &"
 alias selenium='gradle clean selenium'
 alias gcb='gradle clean build'
+alias gcbs='gradle clean build -x test'
+alias gjr='gradle clean build jettyRunWar'
+alias gjrs='gradle clean build jettyRunWar -x test'
 alias st='git status'
 alias branch='git branch'
 alias gpr='git pull --rebase'
@@ -20,13 +23,9 @@ alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 alias pg_ctl='/Library/PostgreSQL/9.1/bin/pg_ctl'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-alias couch-lucene='sh /Applications/couchdb-lucene-0.9.0-SNAPSHOT/bin/run'
-alias whp='cd /Users/nningego/Documents/workspace/WHP/motech-whp'
-alias amqstart='sudo /Applications/apache-activemq-5.6.0/bin/./activemq start'
-alias amqstatus='sudo /Applications/apache-activemq-5.6.0/bin/./activemq status'
-alias amqstop='sudo /Applications/apache-activemq-5.6.0/bin/./activemq stop'
 alias mvim='/Applications/MacVim-snapshot-66/mvim'
-alias workspace='cd /Users/nningego/Documents/workspace'
+alias ws='cd /Users/Thoughtworker/workspace'
+alias mn='cd /Users/Thoughtworker/workspace/manheim'
 alias clojure='java -cp clojure-1.5.1.jar clojure.main'
 
 export EDITOR="vim -f"
@@ -34,8 +33,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 export PATH=$PATH:/Applications/Firefox.app/Contents/MacOS/firefox-bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:/Applications/Vagrant/bin
-export PATH=$PATH:/Applications/gradle-1.3/bin
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_11.jdk/Contents/Home/
+export PATH=$PATH:/Applications/gradle-1.8/bin
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
 export CATALINA_HOME=/Applications/tomcat
 export MAVEN_OPTS="-Xms256M -Xmx2048M -XX:MaxPermSize=2048M -XX:+CMSClassUnloadingEnabled -XX:+CMSPermGenSweepingEnabled -Xbootclasspath/p:/Applications/jvmfaketime.jar"
 export PGDATA=/Library/PostgreSQL/9.1/data/
@@ -72,4 +71,4 @@ function _setup_prompt() {
     export SUDO_PS1="$BLUE\\u$WHITE in $LGRAY\\w\\n${RED}λ ${RESET_COLOR}"
   fi
 }
-
+_setup_prompt

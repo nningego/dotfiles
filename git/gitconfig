@@ -21,3 +21,5 @@
 [credential]
 	helper = osxkeychain
 [http]
+[push]
+	default = matching
