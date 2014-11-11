@@ -11,6 +11,7 @@
   st = status
   ci = commit
   co = checkout
+  pr = pull --rebase
 
   # custom log that is a copy of Gary Bernhardt's
   l  = "!source ~/.githelpers && pretty_git_log"
