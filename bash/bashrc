@@ -19,6 +19,9 @@ alias amq='ps -ax | grep active'
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias mvim='/Applications/MacVim-snapshot-66/mvim'
 alias ws='cd /Users/nningego/workspace'
+alias vsh='vagrant ssh'
+alias vup='vagrant up'
+alias vhelp='vagrant help'
 
 export EDITOR="vim -f"
 export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
