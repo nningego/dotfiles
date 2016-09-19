@@ -1,43 +1,47 @@
 #set -o vi
 alias ls='ls -G' 
 alias ll='ls -alh'
-INTELLIJ="/Applications/IntelliJ\ IDEA\ 14.app/Contents/MacOS/idea"
+INTELLIJ="/Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea"
 alias intellij="${INTELLIJ} &"
-alias selenium='gradle clean selenium'
 alias gcb='gradle clean build'
 alias gcbs='gradle clean build -x test'
 alias gjr='gradle clean build jettyRunWar'
 alias gjrs='gradle clean build jettyRunWar -x test'
-alias st='git status'
+alias gst='git status'
 alias branch='git branch'
 alias gpr='git pull --rebase'
-alias stash='git stash'
 alias mjr='mvn jetty:run'
 alias mci='mvn clean install'
 alias mcis='mvn clean install -DskipTests'
 alias amq='ps -ax | grep active'
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias mvim='/Applications/MacVim-snapshot-66/mvim'
 alias ws='cd /Users/nningego/workspace'
 alias vsh='vagrant ssh'
 alias vup='vagrant up'
 alias vhelp='vagrant help'
+alias dbu='docker-compose -f docker-compose.aws.yml build && docker-compose -f docker-compose.aws.yml up -d'
+alias denv='eval "$(docker-machine env default)"'
+alias dclean='docker stop $(docker  ps -a -q) && docker rm $(docker  ps -a -q) && docker rmi $(docker images -a -q)'
+alias nr='npm run'
+alias nt='npm test'
+alias nto='npm run test-only'
 
 export EDITOR="vim -f"
 export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
 export PATH=$PATH:/Applications/Firefox.app/Contents/MacOS/firefox-bin
 export PATH=$PATH:/Applications/Vagrant/bin
-export PATH=$PATH:/Applications/gradle-2.4/bin
+export PATH=$PATH:/Users/nningego/workspace/gradle-2.12/bin
+export PATH=$HOME/.rbenv/bin:$PATH
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home
 export CATALINA_HOME=/Users/nningego/workspace/apache-tomcat-8.0.23
-export M2_HOME=/Users/nningego/workspace/apache-maven-3.3.3/
+export M2_HOME=/Users/nningego/workspace/apache-maven-3.3.9/
 export PATH=$PATH:$M2_HOME/bin
 export MAVEN_OPTS="-Xms256M -Xmx2048M -XX:MaxPermSize=2048M -XX:+CMSClassUnloadingEnabled -XX:+CMSClassUnloadingEnabled -Xbootclasspath/p:/Applications/jvmfaketime.jar"
 export PGDATA=/Library/PostgreSQL/9.1/data/
 export PGHOST=localhost
 export GRADLE_OPTS="-Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m"
-
 
 ulimit -n 4096
 
@@ -70,3 +74,6 @@ function _setup_prompt() {
   fi
 }
 _setup_prompt
+
+export NVM_DIR="/Users/nningego/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
