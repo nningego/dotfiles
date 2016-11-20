@@ -10,13 +10,9 @@ alias gjrs='gradle clean build jettyRunWar -x test'
 alias gst='git status'
 alias gb='git branch'
 alias gpr='git pull --rebase'
-<<<<<<< 5435f82ecab959978c5e97a1a5bc9c3947a375f8
-alias gcm='git commit'
-=======
 alias gc='git commit'
 alias ga='git add'
 alias gl='git log'
->>>>>>> moar git aliases
 alias mjr='mvn jetty:run'
 alias mci='mvn clean install'
 alias mcis='mvn clean install -DskipTests'
