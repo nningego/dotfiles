@@ -49,7 +49,11 @@ export GRADLE_OPTS="-Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m
 ulimit -n 4096
 
 if [ -f ~/.git-completion.sh ]; then
-    source ~/.git-completion.sh
+    	source ~/.git-completion.sh
+fi
+
+if [ -f ~/.local-config ]; then
+	source ~/.local-config
 fi
 
 function _setup_prompt() {
