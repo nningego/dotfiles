@@ -2,7 +2,7 @@
 	name = nningego
 	email = nishitha.ningegowda@gmail.com
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
   editor = vim
 [color]
   ui = auto

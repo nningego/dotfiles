@@ -8,9 +8,15 @@ alias gcbs='gradle clean build -x test'
 alias gjr='gradle clean build jettyRunWar'
 alias gjrs='gradle clean build jettyRunWar -x test'
 alias gst='git status'
-alias branch='git branch'
+alias gb='git branch'
 alias gpr='git pull --rebase'
+<<<<<<< 5435f82ecab959978c5e97a1a5bc9c3947a375f8
 alias gcm='git commit'
+=======
+alias gc='git commit'
+alias ga='git add'
+alias gl='git log'
+>>>>>>> moar git aliases
 alias mjr='mvn jetty:run'
 alias mci='mvn clean install'
 alias mcis='mvn clean install -DskipTests'
@@ -26,7 +32,7 @@ alias dclean='docker stop $(docker  ps -a -q) && docker rm $(docker  ps -a -q) &
 alias dl='docker logs'
 alias nr='npm run'
 alias nt='npm test'
-alias nto='npm run test-only'
+alias jmeter='/Users/nningego/workspace/work/apache-jmeter-3.0/bin/jmeter'
 
 export EDITOR="vim -f"
 export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
