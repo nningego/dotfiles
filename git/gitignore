@@ -2,10 +2,10 @@
 # making project level ignore files project specific.
 
 # anyone using OSX just ignore this
+.DS_Store
 .DS_Store/
 .idea
 .iml
 
 # I sometimes add my own personal scripts near a repo but they aren't ready
 # to be used by everyone
-testRun.sh
