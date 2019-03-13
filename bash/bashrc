@@ -35,6 +35,7 @@ export ANDROID_SDK_ROOT=/Users/nningego/Library/Android/sdk
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$PATH:/usr/local/git/bin:/usr/local/bin
 export PATH=$PATH:/Applications/Firefox.app/Contents/MacOS/firefox-bin
 export PATH=$PATH:/usr/local/share/consul
 export PATH=$PATH:/Applications/Vagrant/bin
