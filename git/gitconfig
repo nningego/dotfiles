@@ -1,9 +1,10 @@
 [user]
-	name = Nishi N
+	name = Nishitha Ningegowda
 	email = nningego@thoughtworks.com
 [core]
 	excludesfile = ~/.gitignore
   editor = vim
+	autocrlf = input
 [color]
   ui = auto
 [alias]

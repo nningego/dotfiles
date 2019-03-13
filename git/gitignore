@@ -6,6 +6,7 @@
 .DS_Store/
 .idea
 .iml
+.nrepl-port
 
 # I sometimes add my own personal scripts near a repo but they aren't ready
 # to be used by everyone

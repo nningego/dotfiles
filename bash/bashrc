@@ -6,66 +6,56 @@ alias ll='ls -alh'
 alias gst='git status'
 alias gb='git branch'
 alias gpr='git pull --rebase'
+alias gmpr='git multi pull --rebase'
 alias gc='git commit'
+alias gca='git commit --amend'
 alias ga='git add'
 alias gl='git log'
 alias amq='ps -ax | grep active'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ws='cd /Users/nningego/workspace'
+alias empy='cd /Users/nningego/workspace/work/empy'
 alias denv='eval "$(docker-machine env default)"'
 alias dclean='docker stop $(docker  ps -a -q) && docker rm $(docker  ps -a -q) && docker rmi $(docker images -a -q)'
 alias dl='docker logs'
 alias nr='npm run'
 alias nt='npm test'
+alias godbl='go database:local:start'
+alias godbt='go database:test:start'
+alias ave='aws-vault exec'
 
-export EDITOR="vim -f"
-export PATH=/opt/local/bin:/opt/local/sbin:${PATH}
+export JAVA_HOME=`/usr/libexec/java_home -v 11.0.2`
+export M2_HOME=/Users/nningego/workspace/apache-maven-3.3.9/
+export PATH=$PATH:$M2_HOME/bin
+export MAVEN_OPTS="-Xms256M -Xmx2048M -XX:MaxPermSize=2048M -XX:+CMSClassUnloadingEnabled -XX:+CMSClassUnloadingEnabled -Xbootclasspath/p:/Applications/jvmfaketime.jar"
+export GOPATH=/Users/nningego/workspace/work
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export ANDROID_SDK_ROOT=/Users/nningego/Library/Android/sdk
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:/Applications/Firefox.app/Contents/MacOS/firefox-bin
+export PATH=$PATH:/usr/local/share/consul
 export PATH=$PATH:/Applications/Vagrant/bin
 export PATH=$PATH:/Users/nningego/workspace/gradle-2.12/bin
 export PATH=$PATH:/usr/local/opt/gnupg/libexec/gpgbin
 export PATH=$HOME/.rbenv/bin:$PATH
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home
-export M2_HOME=/Users/nningego/workspace/apache-maven-3.3.9/
-export PATH=$PATH:$M2_HOME/bin
-export MAVEN_OPTS="-Xms256M -Xmx2048M -XX:MaxPermSize=2048M -XX:+CMSClassUnloadingEnabled -XX:+CMSClassUnloadingEnabled -Xbootclasspath/p:/Applications/jvmfaketime.jar"
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/Users/nningego/workspace/work/bin
+export PATH=$PATH:/usr/local/share/dotnet
+export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 ulimit -n 4096
 
 if [ -f ~/.git-completion.sh ]; then
-    	source ~/.git-completion.sh
+       source ~/.git-completion.sh
 fi
 
 if [ -f ~/.local-config ]; then
-	source ~/.local-config
+       source ~/.local-config
 fi
-
-function _setup_prompt() {
-  BLACK="\[\e[0;30m\]"
-  DGRAY="\[\e[1;30m\]"
-  BLUE="\[\e[0;34m\]"
-  LBLUE="\[\e[1;34m\]"
-  GREEN="\[\e[0;32m\]"
-  LGREEN="\[\e[1;32m\]"
-  CYAN="\[\e[0;36m\]"
-  LCYAN="\[\e[1;36m\]"
-  RED="\[\e[0;31m\]"
-  LRED="\[\e[1;31m\]"
-  PURPLE="\[\e[0;35m\]"
-  LPURPLE="\[\e[1;35m\]"
-  BROWN="\[\e[0;33m\]"
-  YELLOW="\[\e[1;33m\]"
-  LGRAY="\[\e[0;37m\]"
-  WHITE="\[\e[1;37m\]"
-  RESET_COLOR="\[\e[0m\]"
-
-  if [[ -n "$PS1" ]]; then
-    export PS1="$CYAN\\w${GREEN} ? ${RESET_COLOR}"
-    export SUDO_PS1="$BLUE\\u$WHITE in $LGRAY\\w\\n${RED}λ ${RESET_COLOR}"
-  fi
-}
-_setup_prompt
 
 export NVM_DIR="/Users/nningego/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
