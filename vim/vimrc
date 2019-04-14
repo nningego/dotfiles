@@ -1,0 +1,86 @@
+execute pathogen#infect()
+
+if has('cscope')
+  set cscopetag cscopeverbose
+
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  cnoreabbrev csa cs add
+  cnoreabbrev csf cs find
+  cnoreabbrev csk cs kill
+  cnoreabbrev csr cs reset
+  cnoreabbrev css cs show
+  cnoreabbrev csh cs help
+
+  command -nargs=0 Cscope cs add ./cscope.out .
+endif
+
+syntax on
+
+set hlsearch
+set number
+set smarttab
+set shiftwidth=2
+set tabstop=2
+set clipboard=unnamed
+set ruler
+set autoindent
+set paste
+set expandtab
+set diffopt+=vertical
+
+map <F3> :tabp<CR>
+map <F4> :tabn<CR>
+
+nnoremap Y y$
+au BufNewFile,BufRead *.pp set filetype=ruby
+
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript nmap <buffer> <Leader>i : <C-u>TsuImport<CR>
+autocmd FileType typescript nmap <buffer> <Leader>r : <C-u>TsuReferences<CR>
+autocmd FileType typescript nmap <buffer> <Leader>R : <C-u>TsuRenameSymbol<CR>
+
+hi Search ctermbg=6
+
+set statusline=%<%f\ %h%m%r
+
+" for Syntastic messages:
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" show line#:column# on the right hand side
+set statusline+=%=%-14.(%l,%c%V%)\ %P
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tslint', 'tsuquyomi']
+let g:syntastic_typescript_tslint_exec = "node_modules/.bin/tslint"
+
+" Airline
+" let g:airline_powerline_fonts = 1
+
+map ,r :Unite -silent -start-insert file_rec/git<CR>
+
+au! BufRead,BufNewFile *.json set filetype=json 
+
+" Better diff colors
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+" markdown folding
+set nocompatible
+if has("autocmd")
+	filetype plugin indent on
+endif
+
+" vimwiki
+let g:vimwiki_folding='list'
