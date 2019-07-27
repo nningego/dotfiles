@@ -24,4 +24,4 @@
 	helper = osxkeychain
 [http]
 [push]
-	default = matching
+	default = current

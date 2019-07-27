@@ -22,7 +22,7 @@ abbr godbl  'go database:local:start'
 abbr godbt  'go database:test:start'
 abbr ave    'aws-vault exec'
 
-set -x JAVA_HOME (/usr/libexec/java_home -v 1.8.0)
+set -x JAVA_HOME (/usr/libexec/java_home -v 11.0.2)
 set -x M2_HOME /Users/nningego/workspace/apache-maven-3.3.9/
 set -x MAVEN_OPTS "-Xms256M -Xmx2048M -XX:MaxPermSize=2048M -XX:+CMSClassUnloadingEnabled -XX:+CMSClassUnloadingEnabled -Xbootclasspath/p:/Applications/jvmfaketime.jar"
 set -x GOPATH /Users/nningego/workspace/work
